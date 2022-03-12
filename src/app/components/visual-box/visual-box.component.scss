@@ -1,0 +1,39 @@
+#outerBox {
+  position: absolute;
+  border: 2px solid black;
+  resize: both;
+  height: 5em;
+  width: 5em;
+  background-color: black;
+  overflow: hidden;
+  &:hover span {
+    opacity: 1;
+  }
+  &:active {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+      0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+  span {
+    height: 1em;
+    padding: 0.1em;
+    padding-top: none;
+    margin-top: none;
+    color: rgba(128, 128, 128, 0.397);
+    z-index: 20;
+    opacity: 0;
+    transition: 1s;
+    position: absolute;
+    right: 0;
+    top: -0.3em;
+    &:hover {
+      color: red;
+    }
+  }
+  #innerBox {
+    background-color: white;
+    width: inherit;
+    height: inherit;
+    position: inherit;
+    z-index: 10;
+  }
+}

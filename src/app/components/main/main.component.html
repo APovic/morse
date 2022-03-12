@@ -1,0 +1,15 @@
+<div class="mainDiv">
+  <app-input
+    [data]="data"
+    (onSubmit)="visual()"
+    (getText)="handleText($event)"
+    (showComponentBox)="handleShowBox($event)"
+  ></app-input>
+  <app-visual-box
+    [showBox]="showBox"
+    *ngIf="showComponentBox"
+    (hideComponentBox)="handleShowBox($event)"
+    [text]="text"
+    [data]="data"
+  ></app-visual-box>
+</div>

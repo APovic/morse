@@ -1,0 +1,16 @@
+<form (ngSubmit)="handleSubmit()">
+  <input
+    onblur="this.focus()"
+    autofocus
+    type="text"
+    name="text"
+    [(ngModel)]="text"
+    autocomplete="off"
+    (ngModelChange)="transformToMorseLetter()"
+  />
+  <h1>
+    <span *ngFor="let letter of morseText | split: text">
+      {{ letter }} &nbsp;
+    </span>
+  </h1>
+</form>
